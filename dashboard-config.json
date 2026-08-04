@@ -1,0 +1,204 @@
+{
+	"version": 1,
+	"allow_edit": true,
+	"plugins": [],
+	"panes": [
+		{
+			"id": "wyayiz",
+			"width": 1,
+			"row": {
+				"5": 1
+			},
+			"col": {
+				"5": 1
+			},
+			"col_width": 1,
+			"widgets": [
+				{
+					"id": "6ba06f",
+					"type": "gauge",
+					"settings": {
+						"title": "Temp",
+						"value": "#[\"heltecLora32V3\"][\"shadow\"][\"temp\"]",
+						"units": "celcius",
+						"min_value": 0,
+						"max_value": 100,
+						"decimal": 2,
+						"human_friendly": true,
+						"rangeonpercent": false,
+						"id": "6ba06f"
+					}
+				},
+				{
+					"id": "0dtwne",
+					"type": "gauge",
+					"settings": {
+						"title": "Humidity",
+						"value": "#[\"heltecLora32V3\"][\"shadow\"][\"humid\"]",
+						"units": "%",
+						"min_value": 0,
+						"max_value": 100,
+						"decimal": 2,
+						"human_friendly": true,
+						"rangeonpercent": false,
+						"id": "0dtwne"
+					}
+				}
+			]
+		},
+		{
+			"id": "443qof",
+			"width": 1,
+			"row": {
+				"5": 1
+			},
+			"col": {
+				"5": 2
+			},
+			"col_width": 1,
+			"widgets": [
+				{
+					"id": "lvyekf",
+					"type": "indicator",
+					"settings": {
+						"title": "LED",
+						"oncolor": "#FFC773",
+						"var_oncolor": null,
+						"offcolor": "#222222",
+						"var_offcolor": null,
+						"value": "#[\"heltecLora32V3\"][\"shadow\"][\"led\"]",
+						"blinking": null,
+						"blinkfrequency": "1",
+						"on_text": "ON",
+						"off_text": "OFF",
+						"id": "lvyekf"
+					}
+				},
+				{
+					"id": "cjsb9i",
+					"type": "Toggle",
+					"settings": {
+						"label": "LED",
+						"state": "#[\"heltecLora32V3\"][\"shadow\"][\"led\"]",
+						"disable_toggle": null,
+						"onInitial": null,
+						"ontext": "ON",
+						"oncolor": "#00C853",
+						"var_oncolor": null,
+						"onToggleOn": "#[\"heltecLora32V3\"].publishMsg(\"led\",\"1\")",
+						"offtext": "OFF",
+						"offcolor": "#F44336",
+						"var_offcolor": null,
+						"onToggleOff": "#[\"heltecLora32V3\"].publishMsg(\"led\",\"0\")"
+					}
+				}
+			]
+		},
+		{
+			"id": "tp2y5m",
+			"width": 1,
+			"row": {
+				"5": 1
+			},
+			"col": {
+				"5": 3
+			},
+			"col_width": 1,
+			"widgets": [
+				{
+					"id": "ogm94l",
+					"type": "indicator",
+					"settings": {
+						"title": "LED Dimmer",
+						"oncolor": "#FFC773",
+						"var_oncolor": null,
+						"offcolor": "#222222",
+						"var_offcolor": null,
+						"value": "#[\"heltecLora32V3\"][\"shadow\"][\"led_dimmer\"]",
+						"blinking": null,
+						"blinkfrequency": "1",
+						"on_text": "ON",
+						"off_text": "OFF"
+					}
+				},
+				{
+					"id": "ljgthj",
+					"type": "gauge",
+					"settings": {
+						"title": "Dimmer",
+						"value": "#[\"heltecLora32V3\"][\"shadow\"][\"vr_percent\"]",
+						"min_value": 0,
+						"max_value": 100,
+						"decimal": 2,
+						"human_friendly": true,
+						"rangeonpercent": false,
+						"id": "ljgthj"
+					}
+				},
+				{
+					"id": "cv6fpk",
+					"type": "Slider",
+					"settings": {
+						"caption": "Dimmer",
+						"color": "grey",
+						"showvalue": true,
+						"min": "0",
+						"max": 100,
+						"step": 1,
+						"sensitivity": 200,
+						"initialvalue": "0",
+						"autovaluesource": "#[\"heltecLora32V3\"][\"shadow\"][\"vr_percent\"]",
+						"disable": null,
+						"onStart": "#[\"heltecLora32V3\"].publishMsg(\"dimmer\",value)",
+						"onSlide": "#[\"heltecLora32V3\"].publishMsg(\"dimmer\",value)",
+						"onStop": "",
+						"onInitial": ""
+					}
+				}
+			]
+		},
+		{
+			"id": "mcgzzd",
+			"width": 1,
+			"row": {
+				"5": 1
+			},
+			"col": {
+				"5": 4
+			},
+			"col_width": 1,
+			"widgets": [
+				{
+					"id": "rgjira",
+					"type": "text_widget",
+					"settings": {
+						"title": "Distance",
+						"size": "small",
+						"value": "#[\"heltecLora32V3\"][\"shadow\"][\"distance_cm\"]",
+						"sparkline": false,
+						"animate": true,
+						"id": "rgjira"
+					}
+				},
+				{
+					"id": "nu90ru",
+					"type": "indicator",
+					"settings": {
+						"oncolor": "#FFC773",
+						"var_oncolor": "",
+						"offcolor": "#222222",
+						"var_offcolor": null,
+						"value": "#[\"heltecLora32V3\"][\"shadow\"][\"led_ultrasonic\"]",
+						"blinking": null,
+						"blinkfrequency": "1",
+						"on_text": "ON",
+						"off_text": "OFF",
+						"id": "nu90ru"
+					}
+				}
+			]
+		}
+	],
+	"datasources": [],
+	"columns": 16
+}
